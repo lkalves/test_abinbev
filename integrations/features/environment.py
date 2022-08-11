@@ -1,5 +1,6 @@
 from behave import fixture, use_fixture
 from selenium.webdriver import Edge
+from time import sleep
 
 
 @fixture
@@ -12,3 +13,7 @@ def browser_edge(context):
 
 def before_all(context):
     use_fixture(browser_edge, context)
+
+
+def before_step(context, step):
+    sleep(1)
