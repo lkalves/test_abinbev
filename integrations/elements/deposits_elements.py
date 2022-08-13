@@ -18,10 +18,6 @@ class DepositsElements:
 
     def button_show_deposit(self):
         return 'https://test-bees.herokuapp.com/deposits/361'
-        # import ipdb
-        # ipdb.sset_trace()
-        # return WebDriverWait(self.driver, 10).until(
-        #     EC.presence_of_element_located((By.XPATH, '//*[@id="deposits"]/table/tbody/tr[5]/td[7]/a')))
 
     def button_edit_deposit(self):
         return WebDriverWait(self.driver, 10).until(
@@ -58,4 +54,3 @@ class DepositsElements:
     def click_destroy_button(self):
         return WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, 'body > div > div:nth-child(4) > form > button')))
-

@@ -17,7 +17,7 @@
       When clico no botao de edit this deposit e insiro as informações que desejo trocar e clico em update
       Then devo ver a mensagem de Deposit was successfully updated e as informações trocadas
 
-    Scenario: Destroir deposito
-      Given que estou na tela de deposito e abro um deposito para destroir
+    Scenario: Destruir deposito
+      Given que estou na tela de deposito e abro um deposito para destruir
       When clico em destruir deposito
       Then devo ver que o deposito foi excluido

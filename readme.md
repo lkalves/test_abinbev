@@ -37,32 +37,22 @@ Links:
 - For api tests you can use any framework you want, but we recommend to use Postman
 - Generate a report with evidences of the tests results
 
-<hr>
-Manual de teste/controle de qualidade de automação - BEES SAAS
-Fork este repositório e siga as instruções abaixo para o teste
+# **Automatização**
 
-Regras do negócio
-
-Desenvolvemos um aplicativo que nos ajudará a gerenciar nosso estoque, depósitos e itens. Sinta-se à vontade para registrar sua conta e começar a usar nosso aplicativo. Reserve um tempo para brincar com a interface do usuário e a API do aplicativo para se familiarizar com o sistema.
-
-Para este teste você terá que criar um projeto de automação de testes ou casos de testes manuais, tente testar o máximo de cenários possível.
+Para instalar os pacotes necessários deverá ser feito a instalação do arquivo `pip install -r requirements.txt`
+Para os testes será necessário ter o **`edgedriver`** já instalado nas variáveis de ambiente. 
+Caso contrario será necessário apontar no arquivo `environment.py` dentro da função  `browser_edge`. Caso queira utilizar outro navegador é 
+possível chamando no import o navegador necessário e passando ele como na variável abaixo apontando o caminho do webdriver.
+ **[```context.browser = Edge(executable_path=r'E:/DEV/Driver/edgedriver.exe')```]**
 
 
-Links:
-Link do aplicativo - https://test-bees.herokuapp.com
-Documentos da API - https://test-bees.herokuapp.com/api-docs/index.html
+#### Os webdrivers podem ser baixados no site abaixo:
+- Chrome: https://chromedriver.chromium.org/downloads
+- Firefox: https://github.com/mozilla/geckodriver/releases
+- Edge: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+- Existem para vários outros navegadores
 
-Requisitos técnicos para automação
 
-Teste a interface do usuário e a API
-Use o padrão de objeto de página ou padrões relativos de sua preferência.
-Use o BDD para qualquer cenário que você queira fazer
-Você pode escolher qualquer linguagem de programação, recomendamos que você use Python 3.6+, MAS DEPENDE DE VOCÊ
-Por favor, siga o estilo de código para o idioma escolhido (exemplo: PEP's para python).
-Descreva como executar seu código em README.MD
-Gere um relatório dos resultados dos seus testes
-Requisitos Técnicos para o Manual
-Teste a interface do usuário e a API
-Documentou todos os casos de teste que você criou
-Para testes de api você pode usar qualquer framework que desejar, mas recomendamos o uso do Postman
-Gerar um relatório com evidências dos resultados dos testes
+### Rodando os testes:
+#### Comandos:
+- `behave .\integrations\features\ `
