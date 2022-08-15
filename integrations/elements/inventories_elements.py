@@ -9,7 +9,6 @@ class InventoriesElements:
         self.url = 'https://test-bees.herokuapp.com/'
         self.driver = browser
 
-    # Scenario: Abrir lista de inventários
     def menu_element_inventories(self):
         return WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '//*[@id="navbarSupportedContent"]/ul/li[3]/a')))
@@ -22,7 +21,6 @@ class InventoriesElements:
         lista = self.get_list_inventory()
         return lista[0].find_element(By.XPATH, 'td[4]/a')
 
-    # Scenario: Criar um inventario
     def button_new_inventory(self):
         return WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '/html/body/div/a')))
@@ -49,12 +47,10 @@ class InventoriesElements:
         return WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '/html/body/div/p')))
 
-    # Scenario: Visualizar inventario
     def inventory_page_element(self):
         return WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '/html/body/div/div[2]/form/button')))
 
-    # Scenario: Editar inventario
     def button_edit_inventory(self):
         return WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '/html/body/div/div[2]/a[1]')))
@@ -84,7 +80,6 @@ class InventoriesElements:
             EC.presence_of_element_located((By.XPATH, '/html/body/div/p')))
         return elemento
 
-    # Scenario: Apagar inventario
     def destroy_inventory_button(self):
         elemento = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '/html/body/div/div[2]/form/button')))
