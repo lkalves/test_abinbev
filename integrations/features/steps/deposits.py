@@ -15,12 +15,12 @@ def initial_screen(context):
 
 @when('clico em deposits no menu superior')
 def click_button_deposits(context):
-    context.deposits_elements.menu_element_deposits().click()
+    context.deposits_elements.menu_element_deposits.click()
 
 
 @then('devo ser redirecionado para a lista de depositos')
 def deposits_list(context):
-    a = context.deposits_elements.deposits_itens()
+    a = context.deposits_elements.deposits_itens
     assert len(a) != 0
 
 
@@ -33,7 +33,7 @@ def deposits_list(context):
 
 @when('clico no botão show this deposit')
 def click_button_show_deposit(context):
-    context.browser.get(context.deposits_elements.button_show_deposit())
+    context.browser.get(context.deposits_elements.button_show_deposit)
 
 
 @then('devo ser direcionado para os detalhes do deposito')
@@ -51,19 +51,19 @@ def check_screen_deposit(context):
 @when('clico no botao de edit this deposit e insiro as informações que desejo trocar e clico em update')
 def edit_data_deposit(context):
     context.deposits_elements = DepositsElements(context.browser)
-    context.deposits_elements.button_edit_deposit().click()
-    context.deposits_elements.edit_name_deposit().clear()
-    context.deposits_elements.edit_name_deposit().send_keys('Deposito VR')
-    context.deposits_elements.edit_city_deposit().clear()
-    context.deposits_elements.edit_city_deposit().send_keys('Volta Redonda')
-    context.deposits_elements.edit_zipcode_deposit().clear()
-    context.deposits_elements.edit_zipcode_deposit().send_keys('27213000')
-    context.deposits_elements.button_update_deposit().click()
+    context.deposits_elements.button_edit_deposit.click()
+    context.deposits_elements.edit_name_deposit.clear()
+    context.deposits_elements.edit_name_deposit.send_keys('Deposito VR')
+    context.deposits_elements.edit_city_deposit.clear()
+    context.deposits_elements.edit_city_deposit.send_keys('Volta Redonda')
+    context.deposits_elements.edit_zipcode_deposit.clear()
+    context.deposits_elements.edit_zipcode_deposit.send_keys('27213000')
+    context.deposits_elements.button_update_deposit.click()
 
 
 @then('devo ver a mensagem de Deposit was successfully updated e as informações trocadas')
 def update_deposit_sucess(context):
-    message = context.deposits_elements.deposit_sucess_update()
+    message = context.deposits_elements.deposit_sucess_update
     assert message.text == 'Deposit was successfully updated.'
 
 
@@ -71,13 +71,13 @@ def update_deposit_sucess(context):
 def open_page_destroy_deposit(context):
     context.deposits_elements = DepositsElements(context.browser)
     context.login_elements = LoginElements(context.browser)
-    context.deposits_elements.menu_element_deposits().click()
-    context.deposits_elements.click_deposit_destroy().click()
+    context.deposits_elements.menu_element_deposits.click()
+    context.deposits_elements.click_deposit_destroy.click()
 
 
 @when('clico em destruir deposito')
 def destroy_deposit_button(context):
-    context.deposits_elements.click_destroy_button().click()
+    context.deposits_elements.click_destroy_button.click()
 
 
 @then('devo ver que o deposito foi excluido')
